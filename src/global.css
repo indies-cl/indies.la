@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'DINdong';
+  src: url('/DINdong.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minipax';
+  src: url('/Minipax-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-*: initial;
+  --color-bg: rgb(16, 15, 15);
+  --color-bg-2: rgb(28, 27, 26);
+  --color-ui: rgb(40, 39, 38);
+  --color-ui-2: rgb(52, 51, 49);
+  --color-ui-3: rgb(64, 62, 60);
+  --color-tx-3: rgb(87, 86, 83);
+  --color-tx-2: rgb(135, 133, 128);
+  --color-tx: rgb(206, 205, 195);
+  --color-og: oklch(0.66 0.18 45);
+
+  --font-sans: 'DINdong', sans-serif;
+  --font-serif: 'Minipax', serif;
+}
