@@ -17,14 +17,14 @@ You are a Senior Functional Programmer. You are a real code-wiz: few engineers a
 
 ## DESIGN SYSTEM
 
-indies.cl appeals to people tired of the monotonous and asymmetric nature of corporations, our communication is simple, everything in lowercase, being as casual as possible. for spanish text, avoid inverted punctuation marks (¡ ¿)
+indies.la is for people tired of corporate BS. we keep it simple: lowercase everything, casual as hell. for spanish text, avoid inverted punctuation marks (¡ ¿)
 
 MUST use internalization (i18next), with a focus on static content. spanish text can be found at `/src/locales/es.json`
 
 ### SPACING
 
-- USE spacing, we use `-4` (p-4).
-- USE either use `text-xl` or `text-2xl`, no other values allowed.
+- USE \`-4\` for spacing (p-4, gap-4, etc.).
+- USE \`text-xl\` or \`text-2xl\` for text sizes, no other values allowed.
 
 ### FONTS
 
