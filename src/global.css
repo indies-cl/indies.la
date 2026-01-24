@@ -5,15 +5,39 @@
   src: url('/DINdong.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
-  font-family: 'Minipax';
-  src: url('/Minipax-Regular.woff2') format('woff2');
+  font-family: 'BIZUDPMincho';
+  src: url('/BIZUDPMincho-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Maname';
+  src: url('/Maname-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'VictorMono';
+  src: url('/VictorMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'VictorMono';
+  src: url('/VictorMono-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
 }
 
 @theme {
@@ -29,5 +53,6 @@
   --color-og: oklch(0.66 0.18 45);
 
   --font-sans: 'DINdong', sans-serif;
-  --font-serif: 'Minipax', serif;
+  --font-serif: 'BIZUDPMincho', serif;
+  --font-mono: 'VictorMono', monospace;
 }

@@ -1,0 +1,145 @@
+{
+  "greeting": "hey",
+  "heading": "INDIES.la",
+  "intro": "a collective of people building cool shit without asking for permission",
+  "nameClarificationBefore": "we're not indies, we're",
+  "nameClarificationAfter": ", the .la is part of the name",
+  "discordBefore": "wanna hang with smart people who actually build stuff?",
+  "discordLink": "join our discord",
+  "discordAfter": " we're into crazy ambitious projects",
+  "conductBefore": "we've got a",
+  "conductLink": "code of conduct",
+  "conductAfter": " tl;dr: no assholes",
+  "welcome": "building or want to build something fun? indie games, a premium lemon squeezer, the next billion-dollar startup, whatever, you're in",
+  "nonprofitBefore": "",
+  "nonprofitAfter": " isn't about profit. we exist so people can meet, share ideas, and build together. all volunteer-run, always looking for help",
+  "friendship": "started as an excuse to make friends. still is",
+  "metaDescription": "indies.la - a collective of people building cool shit without asking for permission",
+  "pageTitle": "indies.la",
+  "conductaTitle": "code of conduct - indies.la",
+  "aboutUs": "what's indies.la?",
+  "switchToEnglish": "switch to english",
+  "switchToSpanish": "cambiar a español",
+  "404": {
+    "title": "404",
+    "message": "you got lost, this page doesn't exist",
+    "backLink": "get back on track"
+  },
+  "conducta": {
+    "aviso": {
+      "heading": "heads up",
+      "paragraph1": "everyone here (attendees, exhibitors, volunteers, sponsors) commits to this code. this applies to all indies events, spaces, and platforms (slack, discord, twitter, etc.)",
+      "paragraph2": "organizers enforce this. no exceptions",
+      "paragraph3": "we mean it"
+    },
+    "versionCorta": {
+      "heading": "the short version",
+      "paragraph1": "you know how every community has \"that person\" who ruins it for everyone?",
+      "paragraph2": "don't be that person"
+    },
+    "versionNoTanCorta": {
+      "heading": "the medium version",
+      "paragraph1": "we're building a harassment-free space across all our events and platforms (slack, twitter, discord, whatsapp, etc.)",
+      "paragraph2": "everyone's welcome regardless of gender, race, sexual orientation, ability, appearance, or beliefs",
+      "paragraph3": "harassment or mistreatment in any form gets you banned, full stop. this event and future ones"
+    },
+    "versionLarga": {
+      "heading": "the detailed version",
+      "acoso": {
+        "heading": "what counts as harassment",
+        "paragraph": "mistreatment or abuse related to gender, sexual orientation, ability, appearance, experience level, race, or beliefs. also: sexual imagery in public spaces, intimidation, stalking, rude talk interruptions, sharing private info, inappropriate physical contact, and anything that violates someone's privacy, dignity, or safety"
+      },
+      "comportamientos": {
+        "heading": "unacceptable behavior",
+        "items": {
+          "item1": "DMing people without asking in public first",
+          "item2": "explicit, violent, threatening, discriminatory language or content that promotes hate",
+          "item3": "harassing, intimidating, or abusing anyone in the community",
+          "item4": "sharing someone's personal info without permission (doxxing)",
+          "item5": "deliberately disrupting discussions or activities",
+          "item6": "impersonating others",
+          "item7": "spam, ads, or unsolicited product pitches",
+          "item8": "bots, scripts, or automation that messes with the community"
+        },
+        "paragraph": "organizers can step in for anything above. violators get kicked from current and future spaces"
+      },
+      "reporte": {
+        "paragraph1": "if you experience or witness harassment, contact an indies organizer immediately. they'll have visible roles and badges at events",
+        "paragraph2": "we'll help you contact authorities if needed and provide whatever support you need"
+      }
+    },
+    "final": {
+      "heading": "we value diversity and inclusion. if you don't vibe with this code or its spirit, please don't participate"
+    }
+  },
+  "footer": {
+    "joinCommunity": "join the community",
+    "codeOfConduct": "code of conduct",
+    "whatsHappening": "what's happening",
+    "aboutUs": "about us",
+    "branding": "brand"
+  },
+  "branding": {
+    "title": "brand - indies.la",
+    "heading": "brand",
+    "communicationStyle": "indies.la is for people tired of corporate BS. we keep it simple: lowercase everything, no \"!\" or \"?\", casual as hell",
+    "fontsHeading": "fonts",
+    "colorsHeading": "colors",
+    "programmersHeading": "for devs",
+    "tailwindConfigHeading": "tailwind css config",
+    "codeAgentsHeading": "code agents",
+    "fonts": {
+      "serif": {
+        "before": "body text uses ",
+        "name": "BIZ UDPMincho"
+      },
+      "sans": {
+        "before": "headlines use ",
+        "name": "DINdong",
+        "after": " (uppercase letters have different widths, like INDIES.la)"
+      },
+      "mono": {
+        "before": "code, engineering, AI stuff uses ",
+        "name": "victor mono"
+      }
+    },
+    "colors": {
+      "bg": {
+        "name": "bg",
+        "description": "main background"
+      },
+      "bg2": {
+        "name": "bg-2",
+        "description": "secondary background"
+      },
+      "ui": {
+        "name": "ui",
+        "description": "borders"
+      },
+      "ui2": {
+        "name": "ui-2",
+        "description": "hover borders"
+      },
+      "ui3": {
+        "name": "ui-3",
+        "description": "active borders"
+      },
+      "tx3": {
+        "name": "tx-3",
+        "description": "faint text"
+      },
+      "tx2": {
+        "name": "tx-2",
+        "description": "muted text"
+      },
+      "tx": {
+        "name": "tx",
+        "description": "primary text"
+      },
+      "og": {
+        "name": "og",
+        "description": "brand color"
+      }
+    }
+  }
+}

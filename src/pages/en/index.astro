@@ -1,9 +1,9 @@
 ---
-import "../global.css";
-import i18n from "../i18n/config";
-import Footer from "../components/Footer.astro";
-import FontPreloads from "../components/FontPreloads.astro";
-import { getLanguageFromPath, getLocalizedPath } from "../utils/language";
+import "../../global.css";
+import i18n from "../../i18n/config";
+import Footer from "../../components/Footer.astro";
+import FontPreloads from "../../components/FontPreloads.astro";
+import { getLanguageFromPath, getLocalizedPath } from "../../utils/language";
 
 const lang = getLanguageFromPath(Astro.url.pathname);
 i18n.changeLanguage(lang);

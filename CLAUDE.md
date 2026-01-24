@@ -10,19 +10,29 @@ You are a Senior Functional Programmer. You are a real code-wiz: few engineers a
 # TECH STACK
 
 - Bun. Package Manager (assume the development server is already running at http://localhost:3000/)
-- Shadcn. UI primitives, found at (`src/components/ui`)
-- Tanstack Start (github: tanstack/router) with React
 - Tailwind CSS.
+- Astro
+- React
+- i18next (localization)
 
 ## DESIGN SYSTEM
 
-USE spacing, we use `-4` (p-4).
-USE either use `text-xl` or `text-2xl`, no other values allowed.
+indies.cl appeals to people tired of the monotonous and asymmetric nature of corporations, our communication is simple, everything in lowercase, we avoid using "¡" or "¿", being as casual as possible
 
-USE font-serif (Minipax) as default with `text-xl`. Both properities inheritet from `text-xl`. body text is lowercase (`lowercase` class) unlike headings.
-USE font-sans (DINdong) for titles and headings with `text-2xl`
+MUST use internalization (i18next), with a focus on static content. spanish text can be found at `/src/locales/es.json`
 
-CONSIDER: both os these fonts have no weights other than 400. therefore `font-bold` is usable; differenctiate text via colors.
+### SPACING
+
+- USE spacing, we use `-4` (p-4).
+- USE either use `text-xl` or `text-2xl`, no other values allowed.
+
+### FONTS
+
+- USE font-serif (BIZ UDPMincho) as default with `text-xl`. Both properities inheritet from `text-xl`. body text is lowercase (`lowercase` class) unlike headings.
+- USE font-sans (DINdong) for titles and headings with `text-2xl`
+- USE font-mono (Victor Mono) for anything engineering or AI related, snippets and terminals.
+
+CONSIDER: these fonts have no weights other than 400. therefore `font-bold` is usable; differenctiate text via colors.
 
 ### colors
 

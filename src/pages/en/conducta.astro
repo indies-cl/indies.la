@@ -1,0 +1,100 @@
+---
+import "../../global.css";
+import i18n from "../../i18n/config";
+import Footer from "../../components/Footer.astro";
+import FontPreloads from "../../components/FontPreloads.astro";
+import { getLanguageFromPath } from "../../utils/language";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+i18n.changeLanguage(lang);
+const t = i18n.getFixedT(lang);
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <FontPreloads />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{t("conductaTitle")}</title>
+  </head>
+  <body class="bg-bg antialiased text-balance text-tx text-xl font-serif p-4">
+    <div class="max-w-lg mx-auto space-y-4">
+      <section class="space-y-4">
+        <h1 class="text-2xl font-sans text-og normal-case">
+          {t("conducta.aviso.heading")}
+        </h1>
+        <p class="lowercase">{t("conducta.aviso.paragraph1")}</p>
+        <p class="lowercase">{t("conducta.aviso.paragraph2")}</p>
+        <p class="lowercase">{t("conducta.aviso.paragraph3")}</p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-sans text-og normal-case">
+          {t("conducta.versionCorta.heading")}
+        </h2>
+        <p class="lowercase">{t("conducta.versionCorta.paragraph1")}</p>
+        <p class="lowercase">{t("conducta.versionCorta.paragraph2")}</p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-sans text-og normal-case">
+          {t("conducta.versionNoTanCorta.heading")}
+        </h2>
+        <p class="lowercase">{t("conducta.versionNoTanCorta.paragraph1")}</p>
+        <p class="lowercase">{t("conducta.versionNoTanCorta.paragraph2")}</p>
+        <p class="lowercase">{t("conducta.versionNoTanCorta.paragraph3")}</p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-sans text-og normal-case">
+          {t("conducta.versionLarga.heading")}
+        </h2>
+
+        <div class="space-y-4">
+          <h3 class="text-2xl font-sans text-og normal-case">
+            {t("conducta.versionLarga.acoso.heading")}
+          </h3>
+          <p class="lowercase">{t("conducta.versionLarga.acoso.paragraph")}</p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="text-2xl font-sans text-og normal-case">
+            {t("conducta.versionLarga.comportamientos.heading")}
+          </h3>
+          <ul class="lowercase space-y-2 list-disc list-inside">
+            <li>{t("conducta.versionLarga.comportamientos.items.item1")}</li>
+            <li>{t("conducta.versionLarga.comportamientos.items.item2")}</li>
+            <li>{t("conducta.versionLarga.comportamientos.items.item3")}</li>
+            <li>{t("conducta.versionLarga.comportamientos.items.item4")}</li>
+            <li>{t("conducta.versionLarga.comportamientos.items.item5")}</li>
+            <li>{t("conducta.versionLarga.comportamientos.items.item6")}</li>
+            <li>{t("conducta.versionLarga.comportamientos.items.item7")}</li>
+            <li>{t("conducta.versionLarga.comportamientos.items.item8")}</li>
+          </ul>
+          <p class="lowercase">
+            {t("conducta.versionLarga.comportamientos.paragraph")}
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <p class="lowercase">
+            {t("conducta.versionLarga.reporte.paragraph1")}
+          </p>
+          <p class="lowercase">
+            {t("conducta.versionLarga.reporte.paragraph2")}
+          </p>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-sans text-og normal-case">
+          {t("conducta.final.heading")}
+        </h2>
+      </section>
+      <Footer pathname={Astro.url.pathname} />
+    </div>
+  </body>
+</html>
