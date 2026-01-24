@@ -1,7 +1,7 @@
 {
   "greeting": "hey",
   "heading": "INDIES.la",
-  "intro": "a collective of people building cool shit without asking for permission",
+  "intro": "collective of people building cool shit from latin america",
   "nameClarificationBefore": "we're not indies, we're",
   "nameClarificationAfter": ", the .la is part of the name",
   "discordBefore": "wanna hang with smart people who actually build stuff?",
@@ -82,7 +82,7 @@
   "branding": {
     "title": "brand - indies.la",
     "heading": "brand",
-    "communicationStyle": "indies.la is for people tired of corporate BS. we keep it simple: lowercase everything, no \"!\" or \"?\", casual as hell",
+    "communicationStyle": "indies.la is for people tired of corporate BS. we keep it simple: lowercase everything, casual as hell. for spanish text, avoid inverted punctuation marks (¡ ¿)",
     "fontsHeading": "fonts",
     "colorsHeading": "colors",
     "programmersHeading": "for devs",

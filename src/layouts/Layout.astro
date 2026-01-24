@@ -1,0 +1,50 @@
+---
+import "../global.css";
+import i18n from "../i18n/config";
+import Footer from "../components/Footer.astro";
+import FontPreloads from "../components/FontPreloads.astro";
+
+type Props = {
+  title: string;
+  description?: string;
+};
+
+const lang = Astro.currentLocale ?? "es";
+i18n.changeLanguage(lang);
+
+const { title, description } = Astro.props;
+
+const ogImageUrl = new URL("/og.png", Astro.site).href;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <FontPreloads />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    {description && <meta name="description" content={description} />}
+    <title>{title}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:image" content={ogImageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImageUrl} />
+  </head>
+  <body class="bg-bg antialiased text-balance text-tx text-xl font-serif p-4">
+    <div class="max-w-lg mx-auto space-y-4">
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>

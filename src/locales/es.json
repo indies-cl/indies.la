@@ -1,29 +1,29 @@
 {
-  "greeting": "hola",
+  "greeting": "hey",
   "heading": "INDIES.la",
-  "intro": "es un colectivo de gente creando cosas bacanes sin pedir permiso",
+  "intro": "colectivo de gente creando cosas bacanes desde latinoamérica",
   "nameClarificationBefore": "no somos indies, somos",
   "nameClarificationAfter": ", el .la es parte del nombre",
-  "discordBefore": "si quieres rodearte de gente simpática e inteligente,",
-  "discordLink": "entra a nuestro discord",
-  "discordAfter": " nos gusta la gente que construye cosas locas y ambiciosas",
+  "discordBefore": "quieres juntarte con gente inteligente que realmente construye cosas?",
+  "discordLink": "únete a nuestro discord",
+  "discordAfter": " nos gustan los proyectos locos y ambiciosos",
   "conductBefore": "tenemos un",
   "conductLink": "código de conducta",
-  "conductAfter": " en simple: no assholes",
-  "welcome": "si estás creando o quieres crear algo entrete, juegos indie, un exprimidor de limones premium, la próxima gazillion-dollar startup, eres bienvenida/o",
+  "conductAfter": " tl;dr: no assholes",
+  "welcome": "construyendo o quieres construir algo entrete? juegos indie, un exprimidor de limones premium, la próxima startup billonaria, lo que sea, bienvenido",
   "nonprofitBefore": "",
-  "nonprofitAfter": " no busca lucrar. la comunidad existe para conocernos, compartir ideas y construir juntos. todo lo levantan voluntarios y siempre buscamos manos que quieran sumarse",
+  "nonprofitAfter": " no busca lucro. existimos para que la gente se conozca, comparta ideas y construya juntos. todo lo hacen voluntarios, siempre buscamos ayuda",
   "friendship": "empezó como una excusa para hacer amigos. sigue siéndolo",
-  "metaDescription": "indies.la, un colectivo de gente creando cosas bacanes sin pedir permiso",
+  "metaDescription": "indies.la - un colectivo de gente creando cosas bacanes sin pedir permiso",
   "pageTitle": "indies.la",
   "conductaTitle": "código de conducta - indies.la",
-  "aboutUs": "que es indies.la?",
+  "aboutUs": "qué es indies.la?",
   "switchToEnglish": "switch to english",
   "switchToSpanish": "cambiar a español",
   "404": {
     "title": "404",
-    "message": "te perdiste, esta página no existe.",
-    "backLink": "vuelve por el buen camino"
+    "message": "te perdiste, esta página no existe",
+    "backLink": "vuelve al camino"
   },
   "conducta": {
     "aviso": {
@@ -75,31 +75,31 @@
   "footer": {
     "joinCommunity": "únete a la comunidad",
     "codeOfConduct": "código de conducta",
-    "whatsHappening": "entérate de que está ocurriendo",
-    "aboutUs": "quienes somos",
-    "branding": "comunicación visual"
+    "whatsHappening": "qué está pasando",
+    "aboutUs": "quiénes somos",
+    "branding": "marca"
   },
   "branding": {
-    "title": "comunicación visual - indies.la",
-    "heading": "comunicación visual",
-    "communicationStyle": "indies.la apela a personas cansadas de lo monótono y asimétrico de los corporativos, nuestra comunicación es sencilla, todo en minúsculas, evitamos usar \"¡\" o \"¿\", siendo lo más casual posible",
+    "title": "marca - indies.la",
+    "heading": "marca",
+    "communicationStyle": "indies.la es para gente cansada de la basura corporativa. lo mantenemos simple: todo en minúsculas, casual como el carajo. para texto en español, evita usar signos de puntuación invertidos (¡ ¿)",
     "fontsHeading": "fuentes",
     "colorsHeading": "colores",
-    "programmersHeading": "para programadores",
+    "programmersHeading": "para devs",
     "tailwindConfigHeading": "configuración de tailwind css",
     "codeAgentsHeading": "agentes de código",
     "fonts": {
       "serif": {
-        "before": "por defecto para el cuerpo usamos ",
+        "before": "el texto del cuerpo usa ",
         "name": "BIZ UDPMincho"
       },
       "sans": {
-        "before": "para titulares usamos ",
+        "before": "los titulares usan ",
         "name": "DINdong",
-        "after": ", donde las mayusculas tienen anchos distintos a las minusculas, ejemplo, INDIES.la"
+        "after": " (las mayúsculas tienen anchos distintos, como INDIES.la)"
       },
       "mono": {
-        "before": "cualquier cosa relacionada a código, ingeniería o inteligencia artificial usamos ",
+        "before": "código, ingeniería, cosas de IA usan ",
         "name": "victor mono"
       }
     },
@@ -118,7 +118,7 @@
       },
       "ui2": {
         "name": "ui-2",
-        "description": "bordes al pasar el mouse"
+        "description": "bordes hover"
       },
       "ui3": {
         "name": "ui-3",
@@ -138,7 +138,7 @@
       },
       "og": {
         "name": "og",
-        "description": "color principal"
+        "description": "color de marca"
       }
     }
   }

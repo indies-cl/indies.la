@@ -1,22 +1,25 @@
 ---
 import i18n from "../i18n/config";
-import { getLanguageFromPath, getLocalizedPath, getOppositeLanguagePath } from "../utils/language";
+import {
+  getLocalizedPath,
+  getOppositeLanguagePath,
+  type Language,
+} from "../utils/language";
 
-type Props = {
-  pathname: string;
-};
-
-const { pathname } = Astro.props;
-const lang = getLanguageFromPath(pathname);
+const lang = (Astro.currentLocale ?? "es") as Language;
+const pathname = Astro.url.pathname;
 const t = i18n.getFixedT(lang);
 const oppositeLangPath = getOppositeLanguagePath(pathname, lang);
-const switchLanguageText = lang === "es" ? t("switchToEnglish") : t("switchToSpanish");
+const switchLanguageText =
+  lang === "es" ? t("switchToEnglish") : t("switchToSpanish");
 ---
 
 <footer class="space-y-4 mt-8 pt-4 border-t border-ui">
   <nav class="space-y-2 lowercase">
     <div>
-      <a href={getLocalizedPath("/", lang)} class="text-og underline">{t("footer.joinCommunity")}</a>
+      <a href={getLocalizedPath("/", lang)} class="text-og underline"
+        >{t("footer.joinCommunity")}</a
+      >
     </div>
     <div>
       <a href={getLocalizedPath("/conducta", lang)} class="text-og underline"
@@ -24,13 +27,14 @@ const switchLanguageText = lang === "es" ? t("switchToEnglish") : t("switchToSpa
       >
     </div>
     <div>
-      <a href={getLocalizedPath("/marca", lang)} class="text-og underline">{t("footer.branding")}</a>
+      <a href={getLocalizedPath("/marca", lang)} class="text-og underline"
+        >{t("footer.branding")}</a
+      >
     </div>
     <div>
-      <a href={getLocalizedPath("/", lang)} class="text-og underline">{t("aboutUs")}</a>
-    </div>
-    <div>
-      <a href={oppositeLangPath} class="text-og underline">{switchLanguageText}</a>
+      <a href={oppositeLangPath} class="text-og underline"
+        >{switchLanguageText}</a
+      >
     </div>
   </nav>
 </footer>

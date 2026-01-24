@@ -1,64 +1,14 @@
 ---
-import "../global.css";
+import Layout from "../layouts/Layout.astro";
+import { HomePage } from "../components/pages/HomePage";
 import i18n from "../i18n/config";
-import Footer from "../components/Footer.astro";
-import FontPreloads from "../components/FontPreloads.astro";
-import { getLanguageFromPath, getLocalizedPath } from "../utils/language";
+import { type Language } from "../utils/language";
 
-const lang = getLanguageFromPath(Astro.url.pathname);
+const lang = (Astro.currentLocale ?? "es") as Language;
 i18n.changeLanguage(lang);
 const t = i18n.getFixedT(lang);
 ---
 
-<html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <FontPreloads />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content={t("metaDescription")}
-    />
-    <title>{t("pageTitle")}</title>
-  </head>
-  <body class="bg-bg antialiased text-balance text-tx text-xl font-serif p-4">
-    <div class="max-w-lg mx-auto space-y-4">
-      <p class="lowercase">
-        <span class="text-2xl font-sans normal-case">{t("heading")}</span>
-        {t("intro")}
-      </p>
-      <p class="lowercase">
-        {t("discordBefore")}{" "}
-        <a
-          href="https://discord.gg/PWTYwhQSKV"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-og underline"
-        >
-          {t("discordLink")}
-        </a>
-        <br />
-        {t("discordAfter")}
-      </p>
-      <p class="lowercase">
-        {t("conductBefore")}{" "}
-        <a href={getLocalizedPath("/conducta", lang)} class="text-og underline">
-          {t("conductLink")}
-        </a>
-        {t("conductAfter")}
-      </p>
-      <p class="lowercase">{t("welcome")}</p>
-      <p class="lowercase">
-        {t("nonprofitBefore")}
-        <span class="text-2xl font-sans normal-case">{t("heading")}</span>{
-          t("nonprofitAfter")
-        }
-      </p>
-      <p class="lowercase">{t("friendship")}</p>
-      <Footer pathname={Astro.url.pathname} />
-    </div>
-  </body>
-</html>
+<Layout title={t("pageTitle")} description={t("metaDescription")}>
+  <HomePage client:load lang={lang} />
+</Layout>
