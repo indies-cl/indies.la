@@ -1,7 +1,7 @@
 {
   "greeting": "hey",
   "heading": "INDIES.la",
-  "intro": "colectivo de gente creando cosas bacanes desde latinoamérica",
+  "intro": "colectivo de gente creando cosas bacanes para internet",
   "nameClarificationBefore": "no somos indies, somos",
   "nameClarificationAfter": ", el .la es parte del nombre",
   "discordBefore": "quieres juntarte con gente inteligente que realmente construye cosas?",
@@ -14,6 +14,23 @@
   "nonprofitBefore": "",
   "nonprofitAfter": " no busca lucro. existimos para que la gente se conozca, comparta ideas y construya juntos. todo lo hacen voluntarios, siempre buscamos ayuda",
   "friendship": "empezó como una excusa para hacer amigos. sigue siéndolo",
+  "patronsThanks": "han apoyado nuestro trabajo",
+  "hero": {
+    "welcomeAlt": "bienvenido al colectivo",
+    "tagline": "hogar para los locos, ambiciosos y obsesos",
+    "joinButton": "ENTRAR",
+    "catAlt": "gato saltando"
+  },
+  "discord": {
+    "intro": "ven a compartir con la comunidad de discord!",
+    "channelsIntro": "estos son algunos de los canales disponibles:",
+    "channels": {
+      "presentaciones": "conoce a los miembros del colectivo, qué hacen y qué los motiva, aprovecha de presentarte también",
+      "ofertasLaborales": "cualquiera puede contratar, pero debe transparentar la compensación, no hay excepciones",
+      "lanzamientos": "estás creando algo nuevo? compártelo con todo el mundo!",
+      "anuncios": "sé la primera persona en enterarse cuándo y dónde nos vamos a juntar, no te quedes sin pizza!"
+    }
+  },
   "metaDescription": "indies.la - un colectivo de gente creando cosas bacanes sin pedir permiso",
   "pageTitle": "indies.la",
   "conductaTitle": "código de conducta - indies.la",

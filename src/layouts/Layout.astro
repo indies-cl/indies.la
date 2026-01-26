@@ -41,8 +41,17 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImageUrl} />
   </head>
-  <body class="bg-bg antialiased text-balance text-tx text-xl font-serif p-4">
-    <div class="max-w-lg mx-auto space-y-4">
+  <body class="bg-bg antialiased text-balance text-tx text-xl font-serif">
+    <a
+      href="https://laclase.indies.la"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bg-og font-sans font-black text-[#fff] p-1 text-center sticky top-0 z-10 text-sm inline-block w-full"
+    >
+      pssh.. estamos armando la clase 2.0, un curso histórico impartido por la
+      universidad de chile, pero esta vez para todo el mundo
+    </a>
+    <div class="space-y-4">
       <slot />
       <Footer />
     </div>

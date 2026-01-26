@@ -14,11 +14,13 @@
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.16.15",
+    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "i18next": "^25.8.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-i18next": "^16.5.3",
+    "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18"
   }
 }

@@ -14,7 +14,18 @@ const switchLanguageText =
   lang === "es" ? t("switchToEnglish") : t("switchToSpanish");
 ---
 
-<footer class="space-y-4 mt-8 pt-4 border-t border-ui">
+<footer class="space-y-4 mt-8 p-4 border-t border-ui mx-auto max-w-lg">
+  <div class="flex items-center gap-4">
+    <img src="/logo.png" alt="indies.la" class="h-32 w-auto" />
+    <div>
+      <p class="lowercase">
+        <span class="text-2xl font-sans normal-case block">
+          {t("heading")}
+        </span>
+        {t("intro")}
+      </p>
+    </div>
+  </div>
   <nav class="space-y-2 lowercase">
     <div>
       <a href={getLocalizedPath("/", lang)} class="text-og underline"

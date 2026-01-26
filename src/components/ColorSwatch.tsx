@@ -116,7 +116,7 @@ const ColorSwatchItem = ({ color }: { color: ColorDefinition }) => {
 
 export const ColorSwatch = () => {
   return (
-    <div className="space-y-4">
+    <div className="grid">
       {colors.map((color) => (
         <ColorSwatchItem key={color.key} color={color} />
       ))}

@@ -14,6 +14,23 @@
   "nonprofitBefore": "",
   "nonprofitAfter": " isn't about profit. we exist so people can meet, share ideas, and build together. all volunteer-run, always looking for help",
   "friendship": "started as an excuse to make friends. still is",
+  "patronsThanks": "thanks to our supporters",
+  "hero": {
+    "welcomeAlt": "welcome to the collective",
+    "tagline": "the home for crazy, ambitious, obsessive builders",
+    "joinButton": "JOIN",
+    "catAlt": "cat jumping"
+  },
+  "discord": {
+    "intro": "come hang out with the discord community!",
+    "channelsIntro": "here are some of the channels available:",
+    "channels": {
+      "presentaciones": "meet the collective members, what they do and what drives them, introduce yourself too",
+      "ofertasLaborales": "anyone can hire, but must disclose compensation, no exceptions",
+      "lanzamientos": "building something new? share it with everyone!",
+      "anuncios": "be the first to know when and where we're meeting up, don't miss out on pizza!"
+    }
+  },
   "metaDescription": "indies.la - a collective of people building cool shit without asking for permission",
   "pageTitle": "indies.la",
   "conductaTitle": "code of conduct - indies.la",

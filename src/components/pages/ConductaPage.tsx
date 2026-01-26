@@ -1,10 +1,17 @@
 import { useTranslation } from "react-i18next";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import i18n from "../../i18n/config";
 import { type Language } from "../../utils/language";
 
 const COMPORTAMIENTO_ITEMS = [
-  "item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8"
+  "item1",
+  "item2",
+  "item3",
+  "item4",
+  "item5",
+  "item6",
+  "item7",
+  "item8",
 ] as const;
 
 type Props = {
@@ -12,11 +19,13 @@ type Props = {
 };
 
 export const ConductaPage = memo(function ConductaPage({ lang }: Props) {
-  i18n.changeLanguage(lang);
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang]);
   const { t } = useTranslation();
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 max-w-lg mx-auto p-4">
       <section className="space-y-4">
         <h1 className="text-2xl font-sans text-og normal-case">
           {t("conducta.aviso.heading")}
@@ -38,9 +47,15 @@ export const ConductaPage = memo(function ConductaPage({ lang }: Props) {
         <h2 className="text-2xl font-sans text-og normal-case">
           {t("conducta.versionNoTanCorta.heading")}
         </h2>
-        <p className="lowercase">{t("conducta.versionNoTanCorta.paragraph1")}</p>
-        <p className="lowercase">{t("conducta.versionNoTanCorta.paragraph2")}</p>
-        <p className="lowercase">{t("conducta.versionNoTanCorta.paragraph3")}</p>
+        <p className="lowercase">
+          {t("conducta.versionNoTanCorta.paragraph1")}
+        </p>
+        <p className="lowercase">
+          {t("conducta.versionNoTanCorta.paragraph2")}
+        </p>
+        <p className="lowercase">
+          {t("conducta.versionNoTanCorta.paragraph3")}
+        </p>
       </section>
 
       <section className="space-y-4">
@@ -52,7 +67,9 @@ export const ConductaPage = memo(function ConductaPage({ lang }: Props) {
           <h3 className="text-2xl font-sans text-og normal-case">
             {t("conducta.versionLarga.acoso.heading")}
           </h3>
-          <p className="lowercase">{t("conducta.versionLarga.acoso.paragraph")}</p>
+          <p className="lowercase">
+            {t("conducta.versionLarga.acoso.paragraph")}
+          </p>
         </div>
 
         <div className="space-y-4">

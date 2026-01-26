@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { HomePage } from "../components/pages/HomePage";
 import i18n from "../i18n/config";
 import { type Language } from "../utils/language";
+import { Hero } from "../components/pages/HomePage";
 
 const lang = (Astro.currentLocale ?? "es") as Language;
 i18n.changeLanguage(lang);

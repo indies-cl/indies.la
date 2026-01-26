@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import i18n from "../../i18n/config";
 import { type Language } from "../../utils/language";
 import { ColorSwatch } from "../ColorSwatch";
@@ -76,58 +76,68 @@ type Props = {
 };
 
 export const MarcaPage = memo(function MarcaPage({ lang }: Props) {
-  i18n.changeLanguage(lang);
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang]);
   const { t } = useTranslation();
 
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-sans text-og normal-case">
-        {t("branding.heading")}
-      </h1>
+      <div className="grid grid-cols-3 gap-4 max-w-5xl mx-auto p-4">
+        <section className="space-y-4">
+          <h1 className="text-2xl font-sans text-og normal-case">
+            {t("branding.heading")}
+          </h1>
+          <p className="font-serif">{t("branding.communicationStyle")}</p>
+        </section>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-sans text-og normal-case">
+            {t("branding.fontsHeading")}
+          </h2>
+          <p className="font-serif">
+            {t("branding.fonts.serif.before")}
+            <FontLink href="https://uncut.wtf/serif/biz-udpmincho/">
+              {t("branding.fonts.serif.name")}
+            </FontLink>
+          </p>
+          <p className="font-sans text-2xl">
+            {t("branding.fonts.sans.before")}
+            <FontLink href="https://typotheque.genderfluid.space/fr/fontes/dindong">
+              {t("branding.fonts.sans.name")}
+            </FontLink>
+            {t("branding.fonts.sans.after")}
+          </p>
+          <p className="font-mono">
+            {t("branding.fonts.mono.before")}
+            <FontLink href="https://rubjo.github.io/victor-mono/">
+              {t("branding.fonts.mono.name")}
+            </FontLink>
+          </p>
+        </section>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-sans text-og normal-case">
+            {t("branding.colorsHeading")}
+          </h2>
+          <ColorSwatch />
+        </section>
+      </div>
+      <div className="grid grid-cols-2 gap-4 max-w-5xl mx-auto p-4">
+        <section className="space-y-4">
+          <h3 className=" max-w-lg mx-auto text-2xl font-sans text-og normal-case">
+            {t("branding.tailwindConfigHeading")}
+          </h3>
 
-      <p className="font-serif">{t("branding.communicationStyle")}</p>
+          <CodeSnippet code={TAILWIND_CONFIG_CODE} language="css" />
+        </section>
 
-      <h2 className="text-2xl font-sans text-og normal-case">
-        {t("branding.fontsHeading")}
-      </h2>
+        <section className="space-y-4">
+          <h3 className=" max-w-lg mx-auto text-2xl font-sans text-og normal-case">
+            {t("branding.codeAgentsHeading")}
+          </h3>
 
-      <p className="font-serif">
-        {t("branding.fonts.serif.before")}
-        <FontLink href="https://uncut.wtf/serif/biz-udpmincho/">
-          {t("branding.fonts.serif.name")}
-        </FontLink>
-      </p>
-      <p className="font-sans text-2xl">
-        {t("branding.fonts.sans.before")}
-        <FontLink href="https://typotheque.genderfluid.space/fr/fontes/dindong">
-          {t("branding.fonts.sans.name")}
-        </FontLink>
-        {t("branding.fonts.sans.after")}
-      </p>
-      <p className="font-mono">
-        {t("branding.fonts.mono.before")}
-        <FontLink href="https://rubjo.github.io/victor-mono/">
-          {t("branding.fonts.mono.name")}
-        </FontLink>
-      </p>
-
-      <h2 className="text-2xl font-sans text-og normal-case">
-        {t("branding.colorsHeading")}
-      </h2>
-
-      <ColorSwatch />
-
-      <h3 className="text-2xl font-sans text-og normal-case">
-        {t("branding.tailwindConfigHeading")}
-      </h3>
-
-      <CodeSnippet code={TAILWIND_CONFIG_CODE} language="css" />
-
-      <h3 className="text-2xl font-sans text-og normal-case">
-        {t("branding.codeAgentsHeading")}
-      </h3>
-
-      <CodeSnippet code={CODE_AGENTS_CODE} language="markdown" />
+          <CodeSnippet code={CODE_AGENTS_CODE} language="markdown" />
+        </section>
+      </div>
     </div>
   );
 });
