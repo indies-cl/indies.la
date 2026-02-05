@@ -44,7 +44,7 @@ const FundingSection = memo(function FundingSection({ title, data }: FundingSect
   return (
     <section className="space-y-4">
       <h2 className="text-2xl font-sans text-tx">{title}</h2>
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-4">
         {data.map((funding) => (
           <FundingCard key={funding.nombre} funding={funding} />
         ))}
@@ -61,37 +61,42 @@ const FundingCard = memo(function FundingCard({ funding }: FundingCardProps) {
   const { t } = useTranslation();
 
   return (
-    <article className="bg-bg-2 border border-ui rounded-lg p-6 hover:border-ui-2 hover:shadow-lg transition-all duration-200">
+    <article className="bg-bg-2 border border-ui rounded p-4 hover:border-ui-2 transition-colors">
       <div className="space-y-4">
-        <div>
-          <p className="text-tx-2 text-sm uppercase tracking-wider mb-1">{funding.proveedor}</p>
-          <h3 className="text-2xl font-sans text-tx">{funding.nombre}</h3>
+        <div className="flex justify-between items-start gap-4">
+          <div className="flex-1">
+            <h3 className="text-2xl font-sans text-tx">{funding.nombre}</h3>
+            <p className="text-xl text-og">{funding.proveedor}</p>
+          </div>
+          <div className="text-right">
+            <p className="text-xl font-mono text-tx">{funding.monto}</p>
+          </div>
         </div>
 
-        <div className="bg-bg border border-ui rounded p-4">
-          <p className="text-xl font-mono text-og">{funding.monto}</p>
+        <p className="text-xl text-tx-2 lowercase line-clamp-2 font-serif">
+          {funding.descripcion}
+        </p>
+
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-wrap gap-2">
+            <span className="bg-bg border border-ui text-tx-2 px-2 py-1">
+              {t(`plata.badges.${funding.tipo}`)}
+            </span>
+            <span className="bg-bg border border-ui text-tx-2 px-2 py-1">
+              {t(`plata.badges.${funding.lugar}`)}
+            </span>
+          </div>
+
+          <a
+            href={funding.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-og underline text-xl"
+            aria-label={t("plata.visitSite", { name: funding.nombre })}
+          >
+            {t("plata.visitSite")}
+          </a>
         </div>
-
-        <p className="text-xl text-tx-2 lowercase line-clamp-2">{funding.descripcion}</p>
-
-        <div className="flex flex-wrap gap-2">
-          <span className="bg-bg border border-ui text-tx-2 px-3 py-1 text-sm rounded-full">
-            {t(`plata.badges.${funding.tipo}`)}
-          </span>
-          <span className="bg-bg border border-ui text-tx-2 px-3 py-1 text-sm rounded-full">
-            {t(`plata.badges.${funding.lugar}`)}
-          </span>
-        </div>
-
-        <a
-          href={funding.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-ui hover:bg-ui-2 text-tx px-4 py-2 rounded transition-colors"
-          aria-label={t("plata.visitSite", { name: funding.nombre })}
-        >
-          {t("plata.visitSite")}
-        </a>
       </div>
     </article>
   );
