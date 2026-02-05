@@ -158,5 +158,23 @@
         "description": "color de marca"
       }
     }
+  },
+  "plata": {
+    "title": "plata - indies.la",
+    "metaDescription": "directorio de financiamiento para proyectos indie en chile y latinoamerica",
+    "hero": {
+      "heading": "buscando plata para tu proyecto?",
+      "intro": "acá encontrarás financiamiento, fondos y grants disponibles en chile y latinoamerica"
+    },
+    "financing": "financing",
+    "grantsAndFunds": "grants & funds",
+    "badges": {
+      "financing": "financiamiento",
+      "fondo": "fondo",
+      "grant": "grant",
+      "chile": "chile",
+      "latinoamerica": "latinoamerica"
+    },
+    "visitSite": "visitar sitio"
   }
 }
