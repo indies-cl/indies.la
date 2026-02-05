@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { PlataPage } from "../../components/pages/PlataPage";
+import i18n from "../../i18n/config";
+import { type Language } from "../../utils/language";
+
+const lang = (Astro.currentLocale ?? "en") as Language;
+i18n.changeLanguage(lang);
+const t = i18n.getFixedT(lang);
+---
+
+<Layout title={t("plata.title")} description={t("plata.metaDescription")}>
+  <PlataPage client:load lang={lang} />
+</Layout>
