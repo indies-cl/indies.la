@@ -3,6 +3,8 @@ import { memo, useEffect } from "react";
 import i18n from "../../i18n/config";
 import { getLocalizedPath, type Language } from "../../utils/language";
 import { Marquee } from "../Marquee";
+import { EventCard } from "../events/EventCard";
+import type { EventEntry } from "../../lib/events";
 
 const PATRON_LOGOS = [
   { src: "/assets/patreons/casaw-logo.png", alt: "casaw" },
@@ -47,9 +49,10 @@ const PatronMarquee = memo(function PatronMarquee() {
 
 type Props = {
   readonly lang: Language;
+  readonly events?: EventEntry[];
 };
 
-export const HomePage = memo(function HomePage({ lang }: Props) {
+export const HomePage = memo(function HomePage({ lang, events = [] }: Props) {
   useEffect(() => {
     i18n.changeLanguage(lang);
   }, [lang]);
@@ -90,8 +93,43 @@ export const HomePage = memo(function HomePage({ lang }: Props) {
         </p>
         <p className="lowercase">{t("friendship")}</p>
       </div>
+      <EventsSection lang={lang} events={events} />
       <DiscordServer />
     </>
+  );
+});
+
+type EventsSectionProps = {
+  readonly lang: Language;
+  readonly events: EventEntry[];
+};
+
+const EventsSection = memo(function EventsSection({
+  lang,
+  events,
+}: EventsSectionProps) {
+  const { t } = useTranslation();
+  const hasEvents = events.length > 0;
+
+  if (!hasEvents) {
+    return null;
+  }
+
+  return (
+    <section className="w-full px-4 py-16">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-10 text-center">
+        <div className="space-y-4">
+          <h2 className="text-4xl font-bold lowercase text-tx md:text-5xl">
+            {t("events.title")}
+          </h2>
+        </div>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(0,340px))] justify-center gap-6">
+          {events.map((event) => (
+            <EventCard key={event.id} event={event} lang={lang} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 });
 
@@ -106,7 +144,7 @@ export const DiscordServer = memo(function DiscordServer() {
   const { t } = useTranslation();
 
   return (
-    <div className="">
+    <div className="px-4">
       <p className="normal-case mx-auto max-w-lg px-4 pb-4">
         <span className="text-og">{t("discord.intro")}</span>
         <br />

@@ -3,13 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import { HomePage } from "../components/pages/HomePage";
 import i18n from "../i18n/config";
 import { type Language } from "../utils/language";
-import { Hero } from "../components/pages/HomePage";
+import { getLatestEvents } from "../lib/events";
 
 const lang = (Astro.currentLocale ?? "es") as Language;
 i18n.changeLanguage(lang);
 const t = i18n.getFixedT(lang);
+const events = await getLatestEvents(3);
 ---
 
 <Layout title={t("pageTitle")} description={t("metaDescription")}>
-  <HomePage client:load lang={lang} />
+  <HomePage client:load lang={lang} events={events} />
 </Layout>
