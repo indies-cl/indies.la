@@ -44,7 +44,7 @@ const FundingSection = memo(function FundingSection({ title, data }: FundingSect
   return (
     <section className="space-y-4">
       <h2 className="text-2xl font-sans text-tx">{title}</h2>
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
         {data.map((funding) => (
           <FundingCard key={funding.nombre} funding={funding} />
         ))}
