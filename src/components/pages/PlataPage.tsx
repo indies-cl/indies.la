@@ -16,7 +16,7 @@ export const PlataPage = memo(function PlataPage({ lang }: Props) {
   const { t } = useTranslation();
 
   return (
-    <div className="space-y-8 p-4 max-w-6xl mx-auto">
+    <div className="space-y-8 p-4 max-w-6xl mx-auto w-full">
       <Hero />
       <FundingSection title={t("plata.financing")} data={FINANCING_DATA} />
       <FundingSection title={t("plata.grantsAndFunds")} data={GRANTS_FUNDS_DATA} />
@@ -42,9 +42,9 @@ type FundingSectionProps = {
 
 const FundingSection = memo(function FundingSection({ title, data }: FundingSectionProps) {
   return (
-    <section className="space-y-4">
+    <section className="space-y-4 w-full">
       <h2 className="text-2xl font-sans text-tx">{title}</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 funding-grid">
         {data.map((funding) => (
           <FundingCard key={funding.nombre} funding={funding} />
         ))}
@@ -61,7 +61,7 @@ const FundingCard = memo(function FundingCard({ funding }: FundingCardProps) {
   const { t } = useTranslation();
 
   return (
-    <article className="bg-bg-2 border border-ui rounded p-4 hover:border-ui-2 transition-colors">
+    <article className="bg-bg-2 border border-ui rounded p-4 hover:border-ui-2 transition-colors w-full">
       <div className="space-y-4">
         <div className="flex justify-between items-start gap-4">
           <div className="flex-1">
@@ -69,7 +69,7 @@ const FundingCard = memo(function FundingCard({ funding }: FundingCardProps) {
             <p className="text-xl text-og">{funding.proveedor}</p>
           </div>
           <div className="text-right">
-            <p className="text-xl font-mono text-tx">{funding.monto}</p>
+            <p className="text-xl font-mono font-bold text-[#E86518]">{funding.monto}</p>
           </div>
         </div>
 
@@ -79,10 +79,10 @@ const FundingCard = memo(function FundingCard({ funding }: FundingCardProps) {
 
         <div className="flex items-center justify-between gap-4">
           <div className="flex flex-wrap gap-2">
-            <span className="bg-bg border border-ui text-tx-2 px-2 py-1">
+            <span className="bg-bg border border-ui text-tx-2 px-2 py-1 text-base">
               {t(`plata.badges.${funding.tipo}`)}
             </span>
-            <span className="bg-bg border border-ui text-tx-2 px-2 py-1">
+            <span className="bg-bg border border-ui text-tx-2 px-2 py-1 text-base">
               {t(`plata.badges.${funding.lugar}`)}
             </span>
           </div>
