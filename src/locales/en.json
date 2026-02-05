@@ -175,6 +175,10 @@
       "chile": "chile",
       "latinoamerica": "latin america"
     },
-    "visitSite": "visit site"
+    "visitSite": "visit site",
+    "pagination": {
+      "prev": "previous",
+      "next": "next"
+    }
   }
 }

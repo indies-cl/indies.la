@@ -1,8 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { memo, useEffect } from "react";
+import { memo, useEffect, useMemo } from "react";
 import i18n from "../../i18n/config";
 import { type Language } from "../../utils/language";
 import { FINANCING_DATA, GRANTS_FUNDS_DATA, type FundingOpportunity } from "../../data/plata";
+import { NuqsAdapter } from "nuqs/adapters/react";
+import { useQueryState, parseAsInteger } from "nuqs";
+
+const PAGE_SIZE = 8; 
 
 type Props = {
   readonly lang: Language;
@@ -15,12 +19,23 @@ export const PlataPage = memo(function PlataPage({ lang }: Props) {
 
   const { t } = useTranslation();
 
+
   return (
-    <div className="space-y-8 p-4 max-w-6xl mx-auto w-full">
-      <Hero />
-      <FundingSection title={t("plata.financing")} data={FINANCING_DATA} />
-      <FundingSection title={t("plata.grantsAndFunds")} data={GRANTS_FUNDS_DATA} />
-    </div>
+    <NuqsAdapter>
+      <div className="space-y-8 p-4 max-w-6xl mx-auto w-full">
+        <Hero />
+        <FundingSection
+          title={t("plata.financing")}
+          data={FINANCING_DATA}
+          queryKey="financing"
+        />
+        <FundingSection
+          title={t("plata.grantsAndFunds")}
+          data={GRANTS_FUNDS_DATA}
+          queryKey="grants"
+        />
+      </div>
+    </NuqsAdapter>
   );
 });
 
@@ -38,17 +53,62 @@ const Hero = memo(function Hero() {
 type FundingSectionProps = {
   readonly title: string;
   readonly data: readonly FundingOpportunity[];
+  readonly queryKey: string;
 };
 
-const FundingSection = memo(function FundingSection({ title, data }: FundingSectionProps) {
+const FundingSection = memo(function FundingSection({
+  title,
+  data,
+  queryKey,
+}: FundingSectionProps) {
+  const { t } = useTranslation();
+  const [page, setPage] = useQueryState(
+    queryKey,
+    parseAsInteger.withDefault(1),
+  );
+
+  const totalPages = Math.max(1, Math.ceil(data.length / PAGE_SIZE));
+  const clampedPage = Math.max(1, Math.min(page, totalPages));
+  const start = (clampedPage - 1) * PAGE_SIZE;
+  const slice = useMemo(
+    () => data.slice(start, start + PAGE_SIZE),
+    [data, start],
+  );
+
   return (
     <section className="space-y-4 w-full">
       <h2 className="text-2xl font-sans text-tx">{title}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 funding-grid">
-        {data.map((funding) => (
+        {slice.map((funding) => (
           <FundingCard key={funding.nombre} funding={funding} />
         ))}
       </div>
+      {totalPages > 1 && (
+        <nav
+          className="flex items-center justify-between gap-4 pt-2"
+          aria-label={title}
+        >
+          <button
+            type="button"
+            disabled={clampedPage <= 1}
+            onClick={() => setPage(clampedPage - 1)}
+            className="text-xl text-og disabled:text-tx-3 disabled:cursor-not-allowed underline disabled:no-underline"
+          >
+            {t("plata.pagination.prev")}
+          </button>
+          <span className="text-xl text-tx-2 font-mono">
+            {clampedPage} / {totalPages}
+          </span>
+          <button
+            type="button"
+            disabled={clampedPage >= totalPages}
+            onClick={() => setPage(clampedPage + 1)}
+            className="text-xl text-og disabled:text-tx-3 disabled:cursor-not-allowed underline disabled:no-underline"
+          >
+            {t("plata.pagination.next")}
+          </button>
+        </nav>
+      )}
     </section>
   );
 });
