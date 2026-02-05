@@ -1,0 +1,14 @@
+{
+  "title": "Indies: la venganza de los nerds",
+  "date": "2026-02-05",
+  "description": {
+    "es": "Un evento para conocer a los miembros del colectivo y escuchar sus ideas.",
+    "en": "An event to meet collective members and hear their ideas."
+  },
+  "tag": {
+    "es": "noticia",
+    "en": "news story"
+  },
+  "image": "./img.png",
+  "url": "https://www.df.cl/df-mas/punto-de-partida/indies-los-veinteaneros-que-quieren-financiar-ideas-locas"
+}

@@ -14,6 +14,10 @@
   "nonprofitBefore": "",
   "nonprofitAfter": " no busca lucro. existimos para que la gente se conozca, comparta ideas y construya juntos. todo lo hacen voluntarios, siempre buscamos ayuda",
   "friendship": "empezó como una excusa para hacer amigos. sigue siéndolo",
+  "events": {
+    "title": "lo que hemos hecho",
+    "readMore": "ver más"
+  },
   "patronsThanks": "han apoyado nuestro trabajo",
   "hero": {
     "welcomeAlt": "bienvenido al colectivo",

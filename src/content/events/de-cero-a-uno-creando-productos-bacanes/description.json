@@ -1,0 +1,13 @@
+{
+  "title": "de cero a uno creando productos bacanes",
+  "date": "2026-03-05",
+  "description": {
+    "es": "Un taller para crear productos bacanes. Conectamos con mentores y compañeros para aprender, construir y lanzar productos.",
+    "en": "A workshop to build great products. We connected with mentors and peers to learn, build, and launch products."
+  },
+  "tag": {
+    "es": "evento",
+    "en": "event"
+  },
+  "image": "./img.jpeg"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "1ra meetup",
+  "date": "2025-08-24",
+  "description": {
+    "es": "Primer meetup de la comunidad. Conectamos con mentores y compañeros para aprender, construir y lanzar productos.",
+    "en": "First community meetup. We connected with mentors and peers to learn, build, and launch products."
+  },
+  "tag": {
+    "es": "evento",
+    "en": "event"
+  },
+  "image": "./meetup-1.jpeg"
+}
