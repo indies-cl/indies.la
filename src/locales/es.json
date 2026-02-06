@@ -1,5 +1,6 @@
 {
   "greeting": "hey",
+  "breadcrumb": "navegación",
   "heading": "INDIES.la",
   "intro": "colectivo de gente creando cosas bacanes para internet",
   "nameClarificationBefore": "no somos indies, somos",
@@ -166,7 +167,7 @@
       "heading": "buscando plata para tu proyecto?",
       "intro": "acá encontrarás financiamiento, fondos y grants disponibles en chile y latinoamerica"
     },
-    "financing": "financing",
+    "financing": "plata",
     "grantsAndFunds": "grants & funds",
     "badges": {
       "financing": "financiamiento",

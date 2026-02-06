@@ -1,14 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { MarcaPage } from "../components/pages/MarcaPage";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import i18n from "../i18n/config";
 import { type Language } from "../utils/language";
 
 const lang = (Astro.currentLocale ?? "es") as Language;
 i18n.changeLanguage(lang);
 const t = i18n.getFixedT(lang);
+const breadcrumbItems = [
+  { label: "indies.la", href: "/" },
+  { label: t("branding.heading") },
+];
 ---
 
 <Layout title={t("branding.title")}>
+  <div class="max-w-6xl mx-auto w-full p-4 mb-2.5">
+    <Breadcrumb items={breadcrumbItems} lang={lang} />
+  </div>
   <MarcaPage client:load lang={lang} />
 </Layout>
