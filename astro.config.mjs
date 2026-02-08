@@ -7,6 +7,9 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://indies.la',
+  image: {
+    domains: ['lh3.googleusercontent.com'],
+  },
   vite: {
     plugins: [tailwindcss()],
   },

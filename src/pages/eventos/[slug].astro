@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Image, getImage } from "astro:assets";
 import { PhotoCarousel } from "../../components/PhotoCarousel";
 import { getCollection, render } from "astro:content";
 import i18n from "../../i18n/config";
@@ -20,6 +21,13 @@ const lang = (Astro.currentLocale ?? "es") as Language;
 i18n.changeLanguage(lang);
 
 const formattedDate = formatEventDate(evento.data.date, lang);
+
+const optimizedPhotos = await Promise.all(
+  evento.data.photos.map(async (photo: string) => {
+    const image = await getImage({ src: photo, inferSize: true });
+    return image.src;
+  })
+);
 ---
 
 <Layout
@@ -30,13 +38,13 @@ const formattedDate = formatEventDate(evento.data.date, lang);
     evento.data.photos.length > 0 && (
       <PhotoCarousel
         client:load
-        photos={evento.data.photos}
+        photos={optimizedPhotos}
         alt={evento.data.title}
       />
     )
   }
-  <div class="flex flex-col lg:flex-row lg:justify-center p-4 gap-4">
-    <div class="max-w-lg w-full lg:mx-0 mx-auto space-y-4">
+  <div class="p-4 lg:grid lg:grid-cols-[1fr_minmax(0,32rem)_12rem_1fr] lg:gap-4 flex flex-col">
+    <div class="lg:col-start-2 w-full mx-auto space-y-4">
       <p class="text-tx-2 lowercase font-sans">{formattedDate}</p>
       <header class="space-y-4">
         <h1
@@ -50,9 +58,10 @@ const formattedDate = formatEventDate(evento.data.date, lang);
       </article>
       {
         evento.data.pamphlet && (
-          <img
+          <Image
             src={evento.data.pamphlet}
             alt={evento.data.title}
+            inferSize
             class="w-full border border-ui"
           />
         )
@@ -61,34 +70,38 @@ const formattedDate = formatEventDate(evento.data.date, lang);
         >{i18n.t("evento.back")}</a
       >
     </div>
-    {
-      evento.data.sponsors.length > 0 && (
-        <aside class="hidden lg:block lg:sticky lg:top-16 lg:self-start space-y-4 lg:w-48">
-          <p class="text-tx-2 lowercase font-sans text-left">
-            {i18n.t("evento.sponsors")}
-          </p>
-          <div class="flex flex-col gap-4">
-            {evento.data.sponsors.map(
-              (sponsor: { logo: string; url: string; name: string }) => (
-                <a
-                  href={sponsor.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex h-20 w-48 shrink-0 items-center justify-center bg-bg-2 p-4 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
-                >
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    class="h-full w-auto object-contain"
-                    loading="lazy"
-                  />
-                </a>
-              ),
-            )}
-          </div>
-        </aside>
-      )
-    }
+    <aside class="hidden lg:block lg:col-start-3 lg:sticky lg:top-16 lg:self-start space-y-4">
+      {
+        evento.data.sponsors.length > 0 && (
+          <>
+            <p class="text-tx-2 lowercase font-sans text-left">
+              {i18n.t("evento.sponsors")}
+            </p>
+            <div class="flex flex-col gap-4">
+              {evento.data.sponsors.map(
+                (sponsor: { logo: string; url: string; name: string }) => (
+                  <a
+                    href={sponsor.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex h-20 w-48 shrink-0 items-center justify-center bg-bg-2 p-4 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-[opacity,filter]"
+                  >
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      class="h-full w-auto object-contain"
+                      width={160}
+                      height={48}
+                      loading="eager"
+                    />
+                  </a>
+                ),
+              )}
+            </div>
+          </>
+        )
+      }
+    </aside>
   </div>
   {
     evento.data.sponsors.length > 0 && (
@@ -103,13 +116,15 @@ const formattedDate = formatEventDate(evento.data.date, lang);
                 href={sponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex h-20 w-full shrink-0 items-center justify-center bg-bg-2 p-4 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+                class="flex h-20 w-full shrink-0 items-center justify-center bg-bg-2 p-4 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-[opacity,filter]"
               >
                 <img
                   src={sponsor.logo}
                   alt={sponsor.name}
                   class="h-full w-auto object-contain"
-                  loading="lazy"
+                  width={160}
+                  height={48}
+                  loading="eager"
                 />
               </a>
             ),
