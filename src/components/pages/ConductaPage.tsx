@@ -25,7 +25,7 @@ export const ConductaPage = memo(function ConductaPage({ lang }: Props) {
   const { t } = useTranslation();
 
   return (
-    <div className="space-y-4 max-w-lg mx-auto p-4">
+    <div className="space-y-4 max-w-2xl mx-auto p-4">
       <section className="space-y-4">
         <h1 className="text-2xl font-sans text-og normal-case">
           {t("conducta.aviso.heading")}
