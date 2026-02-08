@@ -58,7 +58,7 @@ export const HomePage = memo(function HomePage({ lang }: Props) {
   return (
     <>
       <Hero />
-      <div className="space-y-4 p-4 max-w-lg mx-auto">
+      <div className="space-y-4 p-4 max-w-2xl mx-auto">
         <p className="lowercase">
           {t("discordBefore")}{" "}
           <a
@@ -107,7 +107,7 @@ export const DiscordServer = memo(function DiscordServer() {
 
   return (
     <div className="">
-      <p className="normal-case mx-auto max-w-lg px-4 pb-4">
+      <p className="normal-case mx-auto max-w-2xl px-4 pb-4">
         <span className="text-og">{t("discord.intro")}</span>
         <br />
         {t("discord.channelsIntro")}

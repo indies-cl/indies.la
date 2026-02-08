@@ -89,6 +89,11 @@
       "heading": "somos una comunidad inclusiva que valora la diversidad. si no estás de acuerdo con cualquier punto de este código de conducta, ni con su espíritu, no deberías participar de nuestras actividades y espacios de comunidad"
     }
   },
+  "evento": {
+    "back": "todos los eventos",
+    "photos": "fotos",
+    "sponsors": "patrocinadores"
+  },
   "footer": {
     "joinCommunity": "únete a la comunidad",
     "codeOfConduct": "código de conducta",

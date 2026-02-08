@@ -89,6 +89,11 @@
       "heading": "we value diversity and inclusion. if you don't vibe with this code or its spirit, please don't participate"
     }
   },
+  "evento": {
+    "back": "all events",
+    "photos": "photos",
+    "sponsors": "sponsors"
+  },
   "footer": {
     "joinCommunity": "join the community",
     "codeOfConduct": "code of conduct",

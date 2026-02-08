@@ -123,7 +123,7 @@ export const MarcaPage = memo(function MarcaPage({ lang }: Props) {
       </div>
       <div className="grid grid-cols-2 gap-4 max-w-5xl mx-auto p-4">
         <section className="space-y-4">
-          <h3 className=" max-w-lg mx-auto text-2xl font-sans text-og normal-case">
+          <h3 className=" max-w-2xl mx-auto text-2xl font-sans text-og normal-case">
             {t("branding.tailwindConfigHeading")}
           </h3>
 
@@ -131,7 +131,7 @@ export const MarcaPage = memo(function MarcaPage({ lang }: Props) {
         </section>
 
         <section className="space-y-4">
-          <h3 className=" max-w-lg mx-auto text-2xl font-sans text-og normal-case">
+          <h3 className=" max-w-2xl mx-auto text-2xl font-sans text-og normal-case">
             {t("branding.codeAgentsHeading")}
           </h3>
 

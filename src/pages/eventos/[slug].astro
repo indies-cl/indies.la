@@ -1,0 +1,141 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { PhotoCarousel } from "../../components/PhotoCarousel";
+import { getCollection, render } from "astro:content";
+import i18n from "../../i18n/config";
+import { type Language } from "../../utils/language";
+import { formatEventDate } from "../../utils/date";
+
+export async function getStaticPaths() {
+  const eventos = await getCollection("eventos");
+  return eventos.map((evento) => ({
+    params: { slug: evento.id },
+    props: { evento },
+  }));
+}
+
+const { evento } = Astro.props;
+const { Content } = await render(evento);
+const lang = (Astro.currentLocale ?? "es") as Language;
+i18n.changeLanguage(lang);
+
+const formattedDate = formatEventDate(evento.data.date, lang);
+---
+
+<Layout
+  title={`${evento.data.title} - indies.la`}
+  description={evento.data.description}
+>
+  {
+    evento.data.photos.length > 0 && (
+      <PhotoCarousel
+        client:load
+        photos={evento.data.photos}
+        alt={evento.data.title}
+      />
+    )
+  }
+  <div class="flex flex-col lg:flex-row lg:justify-center p-4 gap-4">
+    <div class="max-w-lg w-full lg:mx-0 mx-auto space-y-4">
+      <p class="text-tx-2 lowercase font-sans">{formattedDate}</p>
+      <header class="space-y-4">
+        <h1
+          class="text-3xl text-balance font-semibold font-sans text-og normal-case"
+        >
+          {evento.data.title}
+        </h1>
+      </header>
+      <article class="space-y-4 lowercase prose-evento">
+        <Content />
+      </article>
+      {
+        evento.data.pamphlet && (
+          <img
+            src={evento.data.pamphlet}
+            alt={evento.data.title}
+            class="w-full border border-ui"
+          />
+        )
+      }
+      <a href="/eventos" class="text-tx-2 hover:text-og lowercase block"
+        >{i18n.t("evento.back")}</a
+      >
+    </div>
+    {
+      evento.data.sponsors.length > 0 && (
+        <aside class="hidden lg:block lg:sticky lg:top-16 lg:self-start space-y-4 lg:w-48">
+          <p class="text-tx-2 lowercase font-sans text-left">
+            {i18n.t("evento.sponsors")}
+          </p>
+          <div class="flex flex-col gap-4">
+            {evento.data.sponsors.map(
+              (sponsor: { logo: string; url: string; name: string }) => (
+                <a
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-20 w-48 shrink-0 items-center justify-center bg-bg-2 p-4 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+                >
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    class="h-full w-auto object-contain"
+                    loading="lazy"
+                  />
+                </a>
+              ),
+            )}
+          </div>
+        </aside>
+      )
+    }
+  </div>
+  {
+    evento.data.sponsors.length > 0 && (
+      <section class="lg:hidden p-4 space-y-4">
+        <p class="text-tx-2 lowercase font-sans text-center">
+          {i18n.t("evento.sponsors")}
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          {evento.data.sponsors.map(
+            (sponsor: { logo: string; url: string; name: string }) => (
+              <a
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex h-20 w-full shrink-0 items-center justify-center bg-bg-2 p-4 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+              >
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  class="h-full w-auto object-contain"
+                  loading="lazy"
+                />
+              </a>
+            ),
+          )}
+        </div>
+      </section>
+    )
+  }
+</Layout>
+
+<style is:global>
+  .prose-evento :is(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-sans);
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    color: var(--color-og);
+    text-transform: none;
+  }
+  .prose-evento p {
+    color: var(--color-tx);
+  }
+  .prose-evento a {
+    color: var(--color-og);
+    text-decoration: underline;
+  }
+  .prose-evento a:hover {
+    color: var(--color-tx);
+  }
+</style>
