@@ -92,7 +92,8 @@
   "evento": {
     "back": "todos los eventos",
     "photos": "fotos",
-    "sponsors": "patrocinadores"
+    "sponsors": "patrocinadores",
+    "events": "eventos"
   },
   "footer": {
     "joinCommunity": "únete a la comunidad",

@@ -92,7 +92,8 @@
   "evento": {
     "back": "all events",
     "photos": "photos",
-    "sponsors": "sponsors"
+    "sponsors": "sponsors",
+    "events": "events"
   },
   "footer": {
     "joinCommunity": "join the community",

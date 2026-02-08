@@ -4,10 +4,12 @@ date: "2026-01-09"
 description: invitamos a emprendedores penquistas, algunos desde san francisco, a compartir cómo ha sido crear un producto cuando nadie te conoce
 pamphlet: https://lh3.googleusercontent.com/d/1UVOKrmUnaYwdtWm3pCeDgUN8JkuxnlWX=w1000?authuser=0
 photos:
+  - https://lh3.googleusercontent.com/d/1wpj8UPYEJHXynHVXF6uzKoqjrVcP2Rek=w1000?authuser=0
   - https://lh3.googleusercontent.com/d/163tgKWdpInjWc5rnBDIOjbsQHc-p5OGF=w1000?authuser=0
   - https://lh3.googleusercontent.com/d/1ka12GD9RMIrnejwKGp_sN-pRfvnmsRdZ=w1000?authuser=0
-  - https://lh3.googleusercontent.com/d/1wpj8UPYEJHXynHVXF6uzKoqjrVcP2Rek=w1000?authuser=0
+  - https://lh3.googleusercontent.com/d/1uOprdsWDy4LwGlnfRW3Eb4Qxx7FKrgF8=w1000?authuser=0
   - https://lh3.googleusercontent.com/d/1pZFMiUgG56OTD5eX5Qnju_OLRdf4-DOu=w1000?authuser=0
+
 sponsors:
   - logo: /assets/patreons/woku-logo.png
     url: https://woku.app

@@ -6,11 +6,14 @@ type Props = {
   readonly alt: string;
 };
 
-export const PhotoCarousel = memo(function PhotoCarousel({ photos, alt }: Props) {
+export const PhotoCarousel = memo(function PhotoCarousel({
+  photos,
+  alt,
+}: Props) {
   if (photos.length === 0) return null;
 
   return (
-    <Marquee pauseOnHover className="[--duration:30s] [--gap:1rem]">
+    <Marquee pauseOnHover className="[--duration:30s] [--gap:0.5rem]">
       {photos.map((photo, i) => (
         <img
           key={photo}

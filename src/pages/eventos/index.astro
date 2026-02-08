@@ -1,0 +1,57 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import i18n from "../../i18n/config";
+import { type Language } from "../../utils/language";
+import { formatEventDate } from "../../utils/date";
+
+const lang = (Astro.currentLocale ?? "es") as Language;
+i18n.changeLanguage(lang);
+
+const eventos = await getCollection("eventos");
+
+const sortedEventos = [...eventos].sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+---
+
+<Layout title={`${i18n.t("evento.back")} - indies.la`}>
+  <div class="p-4 max-w-2xl w-full mx-auto space-y-4">
+    <h1 class="text-2xl font-sans text-og normal-case">
+      {i18n.t("evento.events")}
+    </h1>
+    <ul class="space-y-4">
+      {
+        sortedEventos.map((evento) => (
+          <li>
+            <a
+              href={`/eventos/${evento.id}`}
+              class="block space-y-4 hover:border-ui-2 transition-colors lg:flex lg:gap-4 lg:items-start"
+            >
+              {evento.data.pamphlet && (
+                <Image
+                  src={evento.data.pamphlet}
+                  alt={evento.data.title}
+                  inferSize
+                  class="hidden lg:block w-48 shrink-0"
+                />
+              )}
+              <div class="p-4 lg:pl-0 space-y-1">
+                <p class="text-tx-2 font-sans lowercase text-base">
+                  {formatEventDate(evento.data.date, lang)}
+                </p>
+                <p class="font-sans text-2xl leading-6 text-tx normal-case">
+                  {evento.data.title}
+                </p>
+                <p class="text-tx-2 lowercase text-base">
+                  {evento.data.description}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
