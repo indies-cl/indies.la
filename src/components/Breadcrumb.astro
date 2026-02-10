@@ -1,0 +1,57 @@
+---
+import { getLocalizedPath, type Language } from "../utils/language";
+import i18n from "../i18n/config";
+
+type BreadcrumbItem = {
+  readonly label: string;
+  readonly href?: string;
+};
+
+interface Props {
+  readonly items: readonly BreadcrumbItem[];
+  readonly lang?: Language;
+  readonly className?: string;
+}
+
+const { items, lang = (Astro.currentLocale ?? "es") as Language, className } = Astro.props;
+i18n.changeLanguage(lang);
+const t = i18n.getFixedT(lang);
+const ariaLabel = t("breadcrumb");
+
+const getHref = (item: BreadcrumbItem): string | undefined => {
+  if (!item.href) return undefined;
+  return getLocalizedPath(item.href, lang);
+};
+---
+
+<nav
+  class={`flex items-center gap-2 lowercase text-tx-2 ${className || ""}`}
+  aria-label={ariaLabel}
+>
+  <ol class="flex items-center gap-2 flex-wrap">
+    {
+      items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        return (
+          <li class="flex items-center gap-2">
+            {item.href ? (
+              <a
+                href={getHref(item)}
+                class="text-og hover:underline transition-colors"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <span class="text-tx">{item.label}</span>
+            )}
+            {!isLast && (
+              <span class="text-tx-3" aria-hidden="true">
+                /
+              </span>
+            )}
+          </li>
+        );
+      })
+    }
+  </ol>
+</nav>

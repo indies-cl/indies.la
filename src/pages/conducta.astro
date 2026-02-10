@@ -1,14 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { ConductaPage } from "../components/pages/ConductaPage";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import i18n from "../i18n/config";
 import { type Language } from "../utils/language";
 
 const lang = (Astro.currentLocale ?? "es") as Language;
 i18n.changeLanguage(lang);
 const t = i18n.getFixedT(lang);
+const breadcrumbItems = [
+  { label: "indies.la", href: "/" },
+  { label: t("footer.codeOfConduct") },
+];
 ---
 
 <Layout title={t("conductaTitle")}>
+  <div class="max-w-6xl mx-auto w-full p-4 mb-2.5">
+    <Breadcrumb items={breadcrumbItems} lang={lang} />
+  </div>
   <ConductaPage client:load lang={lang} />
 </Layout>
