@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { MarcaPage } from "../components/pages/MarcaPage";
+import { PlataPage } from "../components/pages/PlataPage";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import i18n from "../i18n/config";
 import { type Language } from "../utils/language";
@@ -10,13 +10,13 @@ i18n.changeLanguage(lang);
 const t = i18n.getFixedT(lang);
 const breadcrumbItems = [
   { label: "indies.la", href: "/" },
-  { label: t("branding.heading") },
+  { label: t("plata.financing") },
 ];
 ---
 
-<Layout title={t("branding.title")}>
+<Layout title={t("plata.title")} description={t("plata.metaDescription")}>
   <div class="max-w-6xl mx-auto w-full p-4 mb-2.5">
     <Breadcrumb items={breadcrumbItems} lang={lang} />
   </div>
-  <MarcaPage client:load lang={lang} />
+  <PlataPage client:load lang={lang} />
 </Layout>

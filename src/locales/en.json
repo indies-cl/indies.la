@@ -1,5 +1,6 @@
 {
   "greeting": "hey",
+  "breadcrumb": "navigation",
   "heading": "INDIES.la",
   "intro": "collective of people building cool shit from latin america",
   "nameClarificationBefore": "we're not indies, we're",
@@ -163,6 +164,28 @@
         "name": "og",
         "description": "brand color"
       }
+    }
+  },
+  "plata": {
+    "title": "plata - indies.la",
+    "metaDescription": "funding directory for indie projects in chile and latin america",
+    "hero": {
+      "heading": "looking for funding for your project?",
+      "intro": "find financing, funds and grants available in chile and latin america"
+    },
+    "financing": "financing",
+    "grantsAndFunds": "grants & funds",
+    "badges": {
+      "financing": "financing",
+      "fondo": "fund",
+      "grant": "grant",
+      "chile": "chile",
+      "latinoamerica": "latin america"
+    },
+    "visitSite": "visit site",
+    "pagination": {
+      "prev": "previous",
+      "next": "next"
     }
   }
 }

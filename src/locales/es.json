@@ -1,5 +1,6 @@
 {
   "greeting": "hey",
+  "breadcrumb": "navegación",
   "heading": "INDIES.la",
   "intro": "colectivo de gente creando cosas bacanes para internet",
   "nameClarificationBefore": "no somos indies, somos",
@@ -163,6 +164,28 @@
         "name": "og",
         "description": "color de marca"
       }
+    }
+  },
+  "plata": {
+    "title": "plata - indies.la",
+    "metaDescription": "directorio de financiamiento para proyectos indie en chile y latinoamerica",
+    "hero": {
+      "heading": "buscando plata para tu proyecto?",
+      "intro": "acá encontrarás financiamiento, fondos y grants disponibles en chile y latinoamerica"
+    },
+    "financing": "plata",
+    "grantsAndFunds": "grants & funds",
+    "badges": {
+      "financing": "financiamiento",
+      "fondo": "fondo",
+      "grant": "grant",
+      "chile": "chile",
+      "latinoamerica": "latinoamerica"
+    },
+    "visitSite": "visitar sitio",
+    "pagination": {
+      "prev": "anterior",
+      "next": "siguiente"
     }
   }
 }
